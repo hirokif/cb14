@@ -1,0 +1,13 @@
+<h1>分類一覧</h1>
+
+<ul>
+  <% @grp.each do |grp| %>
+  <li>
+  	<%= link_to grp.grp_name, grp_path(grp.id)%>
+  	<%= link_to "[Edit]", edit_grp_path(grp.id) %>
+  	<%= link_to "[Delete]", grp_path(grp.id), method: :delete,
+  		data: {confirm: "Are you sure?" } %>
+  </li>
+  <% end %>
+</ul>
+<p><%= link_to "Add New", new_grp_path %></p>
