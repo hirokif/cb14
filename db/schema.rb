@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140104145031) do
+ActiveRecord::Schema.define(version: 20140105043318) do
 
   create_table "grps", force: true do |t|
     t.string   "grp_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tois", force: true do |t|
+    t.string   "toi_name"
+    t.integer  "grp_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tois", ["grp_id"], name: "index_tois_on_grp_id"
 
 end

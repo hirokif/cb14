@@ -1,1 +1,19 @@
 <h1><%= @grp.grp_name %></h1>
+
+<ul>
+<% @grp.tois.each do |toi| %>
+<li>
+	<%= toi.toi_name %>
+	<%= link_to "[Edit]", edit_grp_path(toi.grp_id, toi.id) %>
+  	<%= link_to "[Delete]", grp_toi_path(toi.grp_id, toi.id), method: :delete,
+  		data: {confirm: "Are you sure?" } %>
+</li>	
+<% end %>
+<li>
+	<%= form_for [@grp, @grp.tois.build] do |f| %>
+	<%= f.text_field :toi_name %>
+	<%= f.submit %>
+	<% end %>
+</li>
+
+</ul>

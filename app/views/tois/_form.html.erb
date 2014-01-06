@@ -1,0 +1,14 @@
+<%= form_for [@toi, @toi] do |f| %>
+<p>
+    <%= f.label :toi_name %><br>
+    <%= f.text_field :toi_name %>
+    <% if @toi.errors.any? %>
+    <%= @toi.errors.messages[:toi_name][0] %>
+    <% end %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+
+<% end %>
