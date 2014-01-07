@@ -1,4 +1,4 @@
-<%= form_for [@toi, @toi] do |f| %>
+<%= form_for ([@toi.grp, @toi]) do |f| %>
 <p>
     <%= f.label :toi_name %><br>
     <%= f.text_field :toi_name %>

@@ -9,5 +9,10 @@
   		data: {confirm: "Are you sure?" } %>
   </li>
   <% end %>
+  <li>
+    <%= form_for (Grp.new) do |f| %>
+	<%= f.text_field :grp_name %>
+	<%= f.submit %>
+	<% end %>
+</li>
 </ul>
-<p><%= link_to "Add New", new_grp_path %></p>
