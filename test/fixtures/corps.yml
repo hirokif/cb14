@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  corp_no: 
+  corp_name: MyString
+  corp_namek: MyString
+  corp_posi: MyString
+  corp_rep: MyString
+  corp_repk: MyString
+  rep_bth: 2014-01-14
+  corp_add: MyString
+  corp_tel: MyString
+  corp_fax: MyString
+  corp_mail: MyString
+  cap: 
+  cy: 
+  emp: 
+  acc: 2014-01-14
+  corp_name2: MyString
+  corp_namek2: MyString
+  corp_posi2: MyString
+  corp_rep2: MyString
+  corp_repk2: MyString
+  rep_bth2: 2014-01-14
+  corp_add2: MyString
+  corp_tel2: MyString
+  corp_fax2: MyString
+  corp_mail2: MyString
+
+two:
+  corp_no: 
+  corp_name: MyString
+  corp_namek: MyString
+  corp_posi: MyString
+  corp_rep: MyString
+  corp_repk: MyString
+  rep_bth: 2014-01-14
+  corp_add: MyString
+  corp_tel: MyString
+  corp_fax: MyString
+  corp_mail: MyString
+  cap: 
+  cy: 
+  emp: 
+  acc: 2014-01-14
+  corp_name2: MyString
+  corp_namek2: MyString
+  corp_posi2: MyString
+  corp_rep2: MyString
+  corp_repk2: MyString
+  rep_bth2: 2014-01-14
+  corp_add2: MyString
+  corp_tel2: MyString
+  corp_fax2: MyString
+  corp_mail2: MyString
