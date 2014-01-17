@@ -2,17 +2,17 @@
 
 <ul>
   <% @grp.each do |grp| %>
-  <li>
-  	<%= link_to grp.grp_name, grp_path(grp.id)%>
-  	<%= link_to "[Edit]", edit_grp_path(grp.id) %>
-  	<%= link_to "[Delete]", grp_path(grp.id), method: :delete,
-  		data: {confirm: "Are you sure?" } %>
-  </li>
+    <li>
+  	  <%= link_to grp.grp_name, grp_path(grp.id)%>
+  	  <%= link_to "[Edit]", edit_grp_path(grp.id) %>
+  	  <%= link_to "[Delete]", grp_path(grp.id), method: :delete,
+  		  data: {confirm: "Are you sure?" } %>
+    </li>
   <% end %>
   <li>
     <%= form_for (Grp.new) do |f| %>
-	<%= f.text_field :grp_name %>
-	<%= f.submit %>
-	<% end %>
-</li>
+	    <%= f.text_field :grp_name %>
+	    <%= f.submit %>
+	  <% end %>
+  </li>
 </ul>

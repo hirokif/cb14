@@ -1,0 +1,18 @@
+<h1>登録業者一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>受付番号</td>
+      <td>業者名</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @corp.each do |corp| %>
+    <tr>
+      <td><%= corp.corp_no %></td>
+      <td><%= corp.corp_name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
