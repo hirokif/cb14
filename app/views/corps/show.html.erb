@@ -1,0 +1,75 @@
+<h1><%= @corp.corp_name %></h1>
+<h3>受付番号:  <%= @corp.corp_no %></h3>
+<%= link_to "編集", edit_corp_path %> | 
+<%= link_to "登録業者一覧", corps_path %>
+    <table>
+        <tr>
+            <th></th><th>登録業者</th><th>受任者(支店等が無い場合は空白)</th>
+        </tr>
+        <tr>
+            <td>商号または名称</td>
+            <td><%= @corp.corp_name %></td>
+            <td><%= @corp.corp2_name %></td>
+        </tr>
+        <tr>
+            <td>フリガナ</td>
+            <td><%= @corp.corp_namek %></td>
+            <td><%= @corp.corp2_namek %></td>
+        </tr>
+        <tr>
+            <td>本社（店）所在地</td>
+            <td><%= @corp.corp_add %></td>
+            <td><%= @corp.corp2_add %></td>
+        </tr>
+        <tr>
+            <td>本社（店）電話番号</td>
+            <td><%= @corp.corp_tel %></td>
+            <td><%= @corp.corp2_tel %></td>
+        </tr>
+        <tr>
+            <td>本社（店）FAX番号</td>
+            <td><%= @corp.corp_fax %></td>
+            <td><%= @corp.corp2_fax %></td>
+        </tr>
+        <tr>
+            <td>電子メールアドレス</td>
+            <td><%= @corp.corp_mail %></td>
+            <td><%= @corp.corp2_mail %></td>
+        </tr>
+        <tr>
+            <td>代表者役職</td>
+            <td><%= @corp.corp_posi %></td>
+            <td><%= @corp.corp2_posi %></td>
+        </tr>
+        <tr>
+            <td>代表者名</td>
+            <td><%= @corp.corp_rep %></td>
+            <td><%= @corp.corp2_rep %></td>
+        </tr>
+        <tr>
+            <td>フリガナ</td>
+            <td><%= @corp.corp_repk %></td>
+            <td><%= @corp.corp2_repk %></td>
+        </tr>
+        <tr>
+            <td>生年月日（yyyy-mm-dd）</td>
+            <td><%= @corp.rep_bth %></td>
+            <td><%= @corp.rep2_bth %></td>
+        </tr>
+        <tr>
+            <td>自己資本額（千円） </td>
+            <td><%= @corp.cap %></td>
+        </tr>
+        <tr>
+            <td>営業年数（年）</td>
+            <td><%= @corp.cy %></td>
+        </tr>
+        <tr>
+            <td>総職員数（人）</td>
+            <td><%= @corp.emp %></td>
+        </tr>
+        <tr>
+            <td>決算日（yyyy-mm-dd）</td>
+            <td><%= @corp.acc %></td>
+        </tr>
+    </table>

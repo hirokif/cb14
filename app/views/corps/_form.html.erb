@@ -1,84 +1,85 @@
 <%= form_for @corp do |f| %>
 <p>
-    受付番号<br>
-    <%= f.text_field :corp_no, {:size => 10} %><br>
-    <br>
-    商号または名称（カナ）<br>
-    <%= f.text_field :corp_namek, {:size => 50} %><br>
-    <br>
-    商号または名称<br>
-    <%= f.text_field :corp_name, {:size => 50} %><br>
-    <br>
-    代表者役職名<br>
-    <%= f.text_field :corp_posi, {:size => 50} %><br>
-    <br>
-    代表者名（カナ）<br>
-    <%= f.text_field :corp_repk, {:size => 50} %><br>
-    <br>
-    代表者名<br>
-    <%= f.text_field :corp_rep, {:size => 50} %><br>
-    <br>
-    代表者生年月日<br>
-    <%= f.text_field :rep_bth, {:size => 50} %><br>
-    <br>
-    本社（店）所在地<br>
-    <%= f.text_field :corp_add, {:size => 50} %><br>
-    <br>
-    本社（店）電話番号<br>
-    <%= f.text_field :corp_tel, {:size => 50} %><br>
-    <br>
-    本社（店）FAX番号<br>
-    <%= f.text_field :corp_fax, {:size => 50} %><br>
-    <br>
-    電子メールアドレス<br>
-    <%= f.text_field :corp_mail, {:size => 50} %><br>
-    <br>
-    <br>
-    商号または名称（カナ）<br>
-    <%= f.text_field :corp2_namek, {:size => 50} %><br>
-    <br>
-    商号または名称<br>
-    <%= f.text_field :corp2_name, {:size => 50} %><br>
-    <br>
-    代表者役職名<br>
-    <%= f.text_field :corp2_posi, {:size => 50} %><br>
-    <br>
-    代表者名（カナ）<br>
-    <%= f.text_field :corp2_repk, {:size => 50} %><br>
-    <br>
-    代表者名<br>
-    <%= f.text_field :corp2_rep, {:size => 50} %><br>
-    <br>
-    代表者生年月日<br>
-    <%= f.text_field :rep2_bth, {:size => 50} %><br>
-    <br>
-    本社（店）所在地<br>
-    <%= f.text_field :corp2_add, {:size => 50} %><br>
-    <br>
-    本社（店）電話番号<br>
-    <%= f.text_field :corp2_tel, {:size => 50} %><br>
-    <br>
-    本社（店）FAX番号<br>
-    <%= f.text_field :corp2_fax, {:size => 50} %><br>
-    <br>
-    電子メールアドレス<br>
-    <%= f.text_field :corp2_mail, {:size => 50} %><br>    
+    <table>
+        <tr>
+            <td>受付番号</td>
+            <td><%= f.text_field :corp_no, {:size => 10} %></td>
+            <td></td>
+        </tr>        <tr>
+            <th></th><th>登録業者</th><th>受任者(支店等が無い場合は空白)</th>
+        </tr>
+        <tr>
+            <td>商号または名称</td>
+            <td><%= f.text_field :corp_name, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_name, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>フリガナ</td>
+            <td><%= f.text_field :corp_namek, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_namek, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>本社（店）所在地</td>
+            <td><%= f.text_field :corp_add, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_add, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>本社（店）電話番号</td>
+            <td><%= f.text_field :corp_tel, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_tel, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>本社（店）FAX番号</td>
+            <td><%= f.text_field :corp_fax, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_fax, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>電子メールアドレス</td>
+            <td><%= f.text_field :corp_mail, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_mail, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>代表者役職</td>
+            <td><%= f.text_field :corp_posi, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_posi, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>代表者名</td>
+            <td><%= f.text_field :corp_rep, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_rep, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>フリガナ</td>
+            <td><%= f.text_field :corp_repk, {:size => 50} %></td>
+            <td><%= f.text_field :corp2_repk, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>生年月日（yyyy-mm-dd）</td>
+            <td><%= f.text_field :rep_bth, {:size => 50} %></td>
+            <td><%= f.text_field :rep2_bth, {:size => 50} %></td>
+        </tr>
+        <tr>
+            <td>自己資本額（千円） </td>
+            <td><%= f.text_field :cap, {:size => 20} %></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>営業年数（年）</td>
+            <td><%= f.text_field :cy, {:size => 20} %></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>総職員数（人）</td>
+            <td><%= f.text_field :emp, {:size => 20} %></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>決算日（yyyy-mm-dd）</td>
+            <td><%= f.text_field :acc, {:size => 20} %></td>
+            <td></td>
+        </tr>
+    </table>
 
-    <br>
-    <br>
-    自己資本額（千円）<br>
-    <%= f.text_field :cap, {:size => 50} %><br>
-    <br>
-    営業年数（年）<br>
-    <%= f.text_field :cy, {:size => 50} %><br>
-    <br>
-    総職員数（人）<br>
-    <%= f.text_field :emp, {:size => 50} %><br>
-    <br>
-    決算日（yyyy-mm-dd）<br>
-    <%= f.text_field :acc, {:size => 50} %><br>
-    <br>
-    <br>
     <% if @corp.errors.any? %>
     <%= @corp.errors.messages[:corp_no][0] %>
     <% end %>

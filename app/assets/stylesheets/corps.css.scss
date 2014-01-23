@@ -1,3 +1,22 @@
 // Place all the styles related to the Corps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.corps {
+	table {
+		border:1px solid #ccc;
+		border-spacing:0;
+		border-collapse:cpllapse;
+		width:100%;
+		text-align: left;
+	}
+
+	table th {
+		border:1px solid #ccc;
+		background-color:#eee;
+	}
+
+	table td {
+		border:1px solid #ccc;
+	}
+}

@@ -1,5 +1,5 @@
 <h1>登録業者一覧</h1>
-
+<%= link_to '新規登録', new_corp_path %>
 <table>
   <thead>
     <tr>
@@ -12,6 +12,10 @@
     <tr>
       <td><%= corp.corp_no %></td>
       <td><%= corp.corp_name %></td>
+      <td>
+        <%= link_to '[Show]', corp_path(corp.id) %>
+        <%= link_to '[Edit]', edit_corp_path(corp.id) %>
+      </td>
     </tr>
     <% end %>
   </tbody>

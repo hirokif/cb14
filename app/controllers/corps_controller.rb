@@ -1,7 +1,7 @@
 class CorpsController < ApplicationController
 
   def index
-    @corp = Corp.all
+    @corp = Corp.all.order('corp_no')
   end
 
   def show
