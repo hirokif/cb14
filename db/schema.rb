@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140114081350) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "corps", force: true do |t|
     t.integer  "corp_no"
     t.string   "corp_name"
@@ -56,6 +59,6 @@ ActiveRecord::Schema.define(version: 20140114081350) do
     t.datetime "updated_at"
   end
 
-  add_index "tois", ["grp_id"], name: "index_tois_on_grp_id"
+  add_index "tois", ["grp_id"], name: "index_tois_on_grp_id", using: :btree
 
 end
