@@ -16,7 +16,6 @@
 /log/*.log
 /tmp
 
-/*.lock
 /vendor/bundle
 
 # Ignore other unneeded files.
