@@ -22,11 +22,11 @@ class GrpsController < ApplicationController
   end
 
   def edit
-    @grp = Grp.find(params[:grp_no])
+    @grp = Grp.find(params[:id])
   end
  
   def update
-    @grp = Grp.find(params[:grp_no])
+    @grp = Grp.find(params[:id])
     if @grp.update(grp_params)
       redirect_to grps_path
     else
