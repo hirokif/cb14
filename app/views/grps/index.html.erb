@@ -3,9 +3,9 @@
 <ul>
   <% @grp.each do |grp| %>
     <li>
-  	  <%= link_to grp.grp_name, grp_path(grp.id)%>
-  	  <%= link_to "[Edit]", edit_grp_path(grp.id) %>
-  	  <%= link_to "[Delete]", grp_path(grp.id), method: :delete,
+  	  <%= link_to grp.grp_name, grp_path(grp.grp_no)%>
+  	  <%= link_to "[Edit]", edit_grp_path(grp.grp_no) %>
+  	  <%= link_to "[Delete]", grp_path(grp.grp_no), method: :delete,
   		  data: {confirm: "Are you sure?" } %>
     </li>
   <% end %>

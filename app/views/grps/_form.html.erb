@@ -1,5 +1,7 @@
 <%= form_for @grp do |f| %>
 <p>
+    <%= f.label :grp_no %><br>
+    <%= f.text_field :grp_no %><br>
     <%= f.label :grp_name %><br>
     <%= f.text_field :grp_name %>
     <% if @grp.errors.any? %>

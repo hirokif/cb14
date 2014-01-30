@@ -45,14 +45,16 @@ end
 
 CSV.foreach('db/grps.csv') do |row|
   Grp.create(
-    :grp_name => row[0]
+    :grp_no => row[0],
+    :grp_name => row[1]
   )
 end
 
 CSV.foreach('db/tois.csv') do |row|
   Toi.create(
-    :grp_id => row[0],
-    :toi_name => row[1]
+    :grp_no => row[0],
+    :toi_no => row[1],
+    :toi_name => row[2]
   )
 end
 

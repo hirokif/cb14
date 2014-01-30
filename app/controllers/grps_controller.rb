@@ -1,7 +1,7 @@
 class GrpsController < ApplicationController
 
   def index
-    @grp = Grp.all
+    @grp = Grp.all.order("grp_no")
   end
 
   def show
@@ -22,11 +22,11 @@ class GrpsController < ApplicationController
   end
 
   def edit
-    @grp = Grp.find(params[:id])
+    @grp = Grp.find(params[:grp_no])
   end
-
+ 
   def update
-    @grp = Grp.find(params[:id])
+    @grp = Grp.find(params[:grp_no])
     if @grp.update(grp_params)
       redirect_to grps_path
     else
@@ -35,7 +35,7 @@ class GrpsController < ApplicationController
   end
 
   def destroy
-  	@grp = Grp.find(params[:id])
+  	@grp = Grp.find(params[:grp_no])
   	@grp.destroy
   	redirect_to grps_path
   end
@@ -44,7 +44,7 @@ class GrpsController < ApplicationController
   private
 
     def grp_params
-      params[:grp].permit(:grp_name)
+      params[:grp].permit(:grp_name, :grp_no)
     end
 
 end

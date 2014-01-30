@@ -1,6 +1,6 @@
 class CreateCorps < ActiveRecord::Migration
   def change
-    create_table :corps do |t|
+    create_table :corps, id: false do |t|
       t.integer :corp_no
       t.string :corp_name
       t.string :corp_namek
@@ -29,5 +29,6 @@ class CreateCorps < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :corps, :corp_no, unique: true
   end
 end
