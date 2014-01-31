@@ -9,10 +9,13 @@
   		  data: {confirm: "Are you sure?" } %>
     </li>
   <% end %>
-  <li>
+
+  <p>追加</p>
     <%= form_for (Grp.new) do |f| %>
-	    <%= f.text_field :grp_name %>
+      <%= f.label :grp_no %><br>
+      <%= f.text_field :grp_no %><br>
+      <%= f.label :grp_name %><br>
+	    <%= f.text_field :grp_name %><br>
 	    <%= f.submit %>
 	  <% end %>
-  </li>
 </ul>

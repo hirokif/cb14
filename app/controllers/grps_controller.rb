@@ -35,7 +35,7 @@ class GrpsController < ApplicationController
   end
 
   def destroy
-  	@grp = Grp.find(params[:grp_no])
+  	@grp = Grp.find(params[:id])
   	@grp.destroy
   	redirect_to grps_path
   end

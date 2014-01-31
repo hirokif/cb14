@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140127073610) do
     t.datetime "updated_at"
   end
 
-  create_table "corps", id: false, force: true do |t|
+  create_table "corps", force: true do |t|
     t.integer  "corp_no"
     t.string   "corp_name"
     t.string   "corp_namek"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140127073610) do
 
   add_index "corps", ["corp_no"], name: "index_corps_on_corp_no", unique: true, using: :btree
 
-  create_table "grps", id: false, force: true do |t|
+  create_table "grps", force: true do |t|
     t.string   "grp_name"
     t.integer  "grp_no"
     t.datetime "created_at"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20140127073610) do
 
   add_index "grps", ["grp_no"], name: "index_grps_on_grp_no", unique: true, using: :btree
 
-  create_table "tois", id: false, force: true do |t|
+  create_table "tois", force: true do |t|
     t.integer  "toi_no"
     t.string   "toi_name"
     t.integer  "grp_no"

@@ -5,16 +5,17 @@
 <li>
 	<%= toi.toi_name %>
 	<%= link_to "[Edit]", edit_grp_toi_path(toi.grp_no, toi.toi_no) %>
-  	<%= link_to "[Delete]", grp_toi_path(toi.grp_no, toi.toi_no), method: :delete,
+  <%= link_to "[Delete]", grp_toi_path(toi.grp_no, toi.toi_no), method: :delete,
   		data: {confirm: "Are you sure?" } %>
 </li>	
 <% end %>
-<li>
-	<%= form_for [@grp, @grp.tois.build] do |f| %>
+
+<%= form_for [@grp, @grp.tois.build] do |f| %>
+<p>
 	<%= f.text_field :toi_name %>
 	<%= f.submit %>
 	<% end %>
-</li>
+</p>
 
 </ul>
 <%= link_to "分類一覧", grps_path %>

@@ -13,8 +13,8 @@
       <td><%= corp.corp_no %></td>
       <td><%= corp.corp_name %></td>
       <td>
-        <%= link_to '[Show]', corp_path(corp.id) %>
-        <%= link_to '[Edit]', edit_corp_path(corp.id) %>
+        <%= link_to '[Show]', corp_path(corp.corp_no) %>
+        <%= link_to '[Edit]', edit_corp_path(corp.corp_no) %>
       </td>
     </tr>
     <% end %>
