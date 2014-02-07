@@ -12,7 +12,10 @@
 
 <%= form_for [@grp, @grp.tois.build] do |f| %>
 <p>
-	<%= f.text_field :toi_name %>
+	<%= f.label :toi_no %>
+	<%= f.text_field :toi_no %><br>
+	<%= f.label :toi_name %>
+	<%= f.text_field :toi_name %><br>
 	<%= f.submit %>
 	<% end %>
 </p>

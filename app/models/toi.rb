@@ -8,6 +8,10 @@ class Toi < ActiveRecord::Base
   presence: {message: "入力してください"},
   uniqueness: {message: "同じ項目があります"}
 
+  validates :toi_no,
+  presence: {message: "入力してください"},
+  uniqueness: {message: "同じ番号があります"}
+
   #ルーティングでresourcesが生成するURLにおけるID以外(grp_no)によるレコード指定
   #def to_param
   #  return toi_no
