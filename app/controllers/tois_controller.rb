@@ -1,10 +1,11 @@
 class ToisController < ApplicationController
 
 def create
-  #@grp = Grp.find(params[:grp_id])
-  @grp = Grp.find(:first, :conditions => ["grp_no = ?", params[:grp_no]])
+  @grp = Grp.find_by(grp_no: params[:grp_no])
+  #@grp = Grp.find(:first, :conditions => ["grp_no = ?", params[:grp_no]])
+  #@toi = @grp.tois.create(toi_params)
   @toi = @grp.tois.create(toi_params)
-  redirect_to grp_path(@grp.id)
+  redirect_to grp_path(@grp.grp_id)
 end
 
 def edit
@@ -14,7 +15,7 @@ end
 def update
   @toi = Toi.find(params[:id])
   if @toi.update(toi_params)
-   #redirect_to grp_path(@toi.grp_id)
+    #redirect_to grp_path(@toi.grp_id)
     redirect_to grp_path(@toi.grp_no)
   else
     render 'edit'
@@ -31,6 +32,7 @@ end
 
 private
     def toi_params
-      params[:toi].permit(:toi_name)
+      params[:toi].permit(:toi_name, :toi_no, :grp_no)
+      #params.require(:toi).permit(:toi_no, :toi_name, :grp_no)
     end
 end

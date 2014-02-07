@@ -5,6 +5,7 @@ class GrpsController < ApplicationController
   end
 
   def show
+    #@grp = Grp.find_by(grp_no: params[:id])
     @grp = Grp.find(params[:id])
   end
 
