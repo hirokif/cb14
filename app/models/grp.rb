@@ -1,5 +1,5 @@
 class Grp < ActiveRecord::Base
-  has_many :tois,
+  has_many :tois, :dependent => :delete_all,
   #:class_name => 'Toi'
   :primary_key => 'grp_no',
   :foreign_key => 'grp_no',
