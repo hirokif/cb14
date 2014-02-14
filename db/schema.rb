@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140127073610) do
 
   create_table "cdks", force: true do |t|
     t.integer  "corp_no"
-    t.integer  "tois_no"
+    t.integer  "toi_no"
     t.integer  "pp"
     t.integer  "mr"
     t.integer  "egr_fr"
@@ -59,19 +59,25 @@ ActiveRecord::Schema.define(version: 20140127073610) do
     t.datetime "updated_at"
   end
 
+  add_index "corps", ["corp_no"], name: "index_corps_on_corp_no", unique: true, using: :btree
+
   create_table "grps", force: true do |t|
     t.string   "grp_name"
+    t.integer  "grp_no"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "grps", ["grp_no"], name: "index_grps_on_grp_no", unique: true, using: :btree
 
   create_table "tois", force: true do |t|
+    t.integer  "toi_no"
     t.string   "toi_name"
-    t.integer  "grp_id"
+    t.integer  "grp_no"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tois", ["grp_id"], name: "index_tois_on_grp_id", using: :btree
+  add_index "tois", ["toi_no"], name: "index_tois_on_toi_no", unique: true, using: :btree
 
 end

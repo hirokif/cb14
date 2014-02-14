@@ -29,5 +29,6 @@ class CreateCorps < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :corps, :corp_no, unique: true
   end
 end
