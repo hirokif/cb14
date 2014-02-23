@@ -4,6 +4,9 @@ class Toi < ActiveRecord::Base
   :primary_key => 'grp_no',
   :foreign_key => 'grp_no'
 
+  has_many :tois,
+           :foreign_key => 'toi_no'
+
   validates :toi_name,
   presence: {message: "入力してください"},
   uniqueness: {message: "同じ項目があります"}
