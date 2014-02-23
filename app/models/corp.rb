@@ -1,5 +1,9 @@
 class Corp < ActiveRecord::Base
-  
+  has_many :cdks,
+           :primary_key => 'corp_no',
+           :foreign_key => 'corp_no'
+
+
   validates :corp_no,
   presence: {message: "入力してください"},
   uniqueness: {message: "同じ項目があります"}

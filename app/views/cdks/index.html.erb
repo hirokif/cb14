@@ -1,0 +1,33 @@
+<h1><%= @corp.corp_name %></h1>
+
+<%= link_to '新規登録', new_corp_cdk_path %>
+<table>
+  <thead>
+    <tr>
+      <td>業種名</td>
+      <td>P点（総合評定値）</td>
+      <td>平均完成工事高（千円）</td>
+      <td>１級</td>
+      <td>基幹</td>
+      <td>２級</td>
+      <td>その他</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cdks.each do |cdk| %>
+    <tr>
+      <td><%= cdk.toi.toi_name %></td>
+      <td><%= cdk.pp %></td>
+      <td><%= cdk.mr %></td>
+      <td><%= cdk.egr_fr %></td>
+      <td><%= cdk.egr_bb %></td>
+      <td><%= cdk.egr_sr %></td>
+      <td><%= cdk.egr_or %></td>
+      <td>
+        <%= link_to '[Show]', corp_cdk_path(cdk.corp_no, cdk.id) %>
+        <%= link_to '[Edit]', edit_corp_cdk_path(cdk.corp_no, cdk.id) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
