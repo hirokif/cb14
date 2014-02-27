@@ -24,10 +24,24 @@
       <td><%= cdk.egr_sr %></td>
       <td><%= cdk.egr_or %></td>
       <td>
-        <%= link_to '[Show]', corp_cdk_path(cdk.corp_no, cdk.id) %>
         <%= link_to '[Edit]', edit_corp_cdk_path(cdk.corp_no, cdk.id) %>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= form_for [@corp, @corp.cdks.build] do |f| %>
+  <p>
+    <%= f.label :pp %>
+    <%= f.text_field :pp %>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= select_tag :toi, options_for_select(
+{'aaa' => 111, 'bbb' => 222}, 'other') %>
+
+<%= select_tag :grp, options_from_collection_for_select(@grps, :grp_no, :grp_name) %>
+
+<%= select_tag :toi, options_from_collection_for_select(@tois, :toi_no, :toi_name) %>
