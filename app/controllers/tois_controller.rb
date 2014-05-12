@@ -11,6 +11,7 @@ end
 
 def edit
   @toi = Toi.find(params[:id])
+  @grps = Grp.all
 end
 
 def update
