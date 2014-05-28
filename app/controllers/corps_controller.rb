@@ -5,7 +5,7 @@ class CorpsController < ApplicationController
   end
 
   def show
-  	@corp = Corp.find(params[:id])
+    @corp = Corp.find(params[:id])
   end 
 
   def new

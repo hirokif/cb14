@@ -74,6 +74,38 @@
         </tr>
     </table>
 </br>
+<p>建設工事 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no) %></p>
+
+<table>
+  <thead>
+    <tr>
+      <td>業種名</td>
+      <td>P点（総合評定値）</td>
+      <td>平均完成工事高（千円）</td>
+      <td>１級</td>
+      <td>基幹</td>
+      <td>２級</td>
+      <td>その他</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @corp.cdks.order(:toi_no).each do |cdk| %>
+    <tr>
+      <td><%= cdk.toi.toi_name %></td>
+      <td><%= cdk.pp %></td>
+      <td><%= cdk.mr %></td>
+      <td><%= cdk.egr_fr %></td>
+      <td><%= cdk.egr_bb %></td>
+      <td><%= cdk.egr_sr %></td>
+      <td><%= cdk.egr_or %></td>
+      <td>
+        <%= link_to '[Edit]', edit_corp_cdk_path(cdk.corp_no, cdk.id) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>測量・建設コンサル | <%= link_to "追加", new_corp_cdk_path(@corp.id) %></p>
+<p>物品製造 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no) %></p>
 <%= link_to "建設工事",corp_cdks_path(@corp.corp_no) %>
-<p>測量・建設コンサル</p></ br>
-<p>物品製造</p></ br>

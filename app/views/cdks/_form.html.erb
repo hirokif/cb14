@@ -1,13 +1,23 @@
-<%= form_for [@toi.grp, @toi] do |f| %>
+<%= form_for [@corp, @cdk] do |f| %>
 <p>
-    <%= f.label :toi_no %><br>
-    <%= f.text_field :toi_no %><br>
-    <%= f.label :toi_name %><br>
-    <%= f.text_field :toi_name %><br>
-    <%= f.label :grp_no %><br>
-    <%= f.text_field :grp_no %><br>
-    <% if @toi.errors.any? %>
-    <%= @toi.errors.messages[:toi_name][0] %>
+    業種名<br>
+        <% #業種（toi）リストボックスに変更 %>
+    <%= f.collection_select :toi_no, @tois, :toi_no, :toi_name %><br>
+    <%#= f.text_field :toi_no %><br><br>
+    P点（総合評定値）<br>
+    <%= f.text_field :pp %><br><br>
+    平均完成工事高（千円）<br>
+    <%= f.text_field :mr %><br><br>
+    １級<br>
+    <%= f.text_field :egr_fr %><br><br>
+    基幹<br>
+    <%= f.text_field :egr_bb %><br><br>
+    ２級<br>
+    <%= f.text_field :egr_sr %><br><br>
+    その他<br>
+    <%= f.text_field :egr_or %><br><br>
+    <% if @cdk.errors.any? %>
+    <%= @cdk.errors.messages[:pp][0] %>
     <% end %>
 </p>
 
