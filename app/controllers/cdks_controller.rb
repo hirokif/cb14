@@ -35,7 +35,9 @@ def new
 end
 
   def destroy
-
+    @cdk = Cdk.find(params[:id])
+    @cdk.destroy
+    redirect_to corp_path(@cdk.corp_no)
   end
 
   private

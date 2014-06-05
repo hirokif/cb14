@@ -100,6 +100,8 @@
       <td><%= cdk.egr_or %></td>
       <td>
         <%= link_to '[Edit]', edit_corp_cdk_path(cdk.corp_no, cdk.id) %>
+        <%= link_to '[Delete]', corp_cdk_path(cdk.corp_no, cdk.id), method: :delete,
+        data: {confirm: "Are you sure?" } %>
       </td>
     </tr>
     <% end %>

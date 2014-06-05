@@ -4,17 +4,17 @@
         <% #業種（toi）リストボックスに変更 %>
     <%= f.collection_select :toi_no, @tois, :toi_no, :toi_name %><br>
     <%#= f.text_field :toi_no %><br><br>
-    P点（総合評定値）<br>
+    <%= f.label :pp, 'P点（総合評定値）' %><br />
     <%= f.text_field :pp %><br><br>
-    平均完成工事高（千円）<br>
+    <%= f.label :mr, '平均完成工事高（千円）' %><br />
     <%= f.text_field :mr %><br><br>
-    １級<br>
+    <%= f.label :fr, '１級' %><br />
     <%= f.text_field :egr_fr %><br><br>
-    基幹<br>
+    <%= f.label :egr_bb, '基幹' %><br />
     <%= f.text_field :egr_bb %><br><br>
-    ２級<br>
+    <%= f.label :egr_sr, '２級' %><br />
     <%= f.text_field :egr_sr %><br><br>
-    その他<br>
+    <%= f.label :egr_or, 'その他' %><br />
     <%= f.text_field :egr_or %><br><br>
     <% if @cdk.errors.any? %>
     <%= @cdk.errors.messages[:pp][0] %>
