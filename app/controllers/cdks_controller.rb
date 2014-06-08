@@ -27,12 +27,12 @@ class CdksController < ApplicationController
     end
   end
 
-def new
-  @cdk = Cdk.new
-  @corp = Corp.find(params[:corp_id])
-  @tois = Toi.all
-  #@tois1 = Toi.find_all_by_grp_no(1)
-end
+  def new
+    @cdk = Cdk.new
+    @corp = Corp.find(params[:corp_id])
+    #@tois = Toi.all
+    @tois = Toi.find_all_by_grp_no(params[:grp_no])
+  end
 
   def destroy
     @cdk = Cdk.find(params[:id])

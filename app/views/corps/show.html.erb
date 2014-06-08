@@ -75,7 +75,9 @@
     </table>
 </br>
 <p>建設工事 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no) %></p>
-
+<p>建設工事1 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no, :grp_no => 1) %></p>
+<p>測量・建設コンサル2 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no, :grp_no => 2) %></p>
+<p>物品製造3 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no, :grp_no => 3) %></p>
 <table>
   <thead>
     <tr>

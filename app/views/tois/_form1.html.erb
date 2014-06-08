@@ -1,0 +1,19 @@
+<h1>form1</h1>
+<%= form_for [@toi.grp, @toi] do |f| %>
+<p>
+    <% #分類（grp）リストボックスに変更 %>
+    <%= f.collection_select :grp_no, @grps, :grp_no, :grp_name %><br>
+    <%= f.label :toi_no %><br>
+    <%= f.text_field :toi_no %><br>
+    <%= f.label :toi_name %><br>
+    <%= f.text_field :toi_name %><br>
+    <% if @toi.errors.any? %>
+    <%= @toi.errors.messages[:toi_name][0] %>
+    <% end %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+
+<% end %>
