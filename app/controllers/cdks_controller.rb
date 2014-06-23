@@ -32,6 +32,7 @@ class CdksController < ApplicationController
     @corp = Corp.find(params[:corp_id])
     #@tois = Toi.all
     @tois = Toi.find_all_by_grp_no(params[:grp_no])
+    @grp = Grp.find(params[:grp_no])
   end
 
   def destroy
