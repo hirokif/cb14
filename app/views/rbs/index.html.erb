@@ -1,0 +1,31 @@
+<h1>Listing rbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rb no</th>
+      <th>Rb name</th>
+      <th>Toi no</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rbs.each do |rb| %>
+      <tr>
+        <td><%= rb.rb_no %></td>
+        <td><%= rb.rb_name %></td>
+        <td><%= rb.toi_no %></td>
+        <td><%= link_to 'Show', rb %></td>
+        <td><%= link_to 'Edit', edit_rb_path(rb) %></td>
+        <td><%= link_to 'Destroy', rb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rb', new_rb_path %>
