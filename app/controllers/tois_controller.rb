@@ -14,6 +14,10 @@ def edit
   @grps = Grp.all
 end
 
+def show
+  @toi = Toi.find(params[:id])
+end
+
 def update
   @toi = Toi.find(params[:id])
   if @toi.update(toi_params)
@@ -25,11 +29,11 @@ def update
 end
 
 def destroy
- #@toi = Toi.find(params[:id])
-  @toi = Toi.find(params[:toi_no])
+  @toi = Toi.find(params[:id])
+#@toi = Toi.find(params[:toi_no])
   @toi.destroy
- #redirect_to grp_path(params[:grp_id])
-  redirect_to grp_path(params[:grp_no])
+  redirect_to grp_path(params[:grp_id])
+ #redirect_to grp_path(params[:grp_no])
 end
 
 private

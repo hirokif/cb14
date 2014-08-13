@@ -3,6 +3,7 @@
 <ul>
   <% @grp.each do |grp| %>
     <li>
+      <%= grp.grp_no %>
   	  <%= link_to grp.grp_name, grp_path(grp.id)%>
   	  <%= link_to "[Edit]", edit_grp_path(grp.id) %>
   	  <%= link_to "[Delete]", grp_path(grp.id), method: :delete,

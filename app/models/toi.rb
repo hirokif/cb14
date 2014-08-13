@@ -15,6 +15,12 @@ class Toi < ActiveRecord::Base
   presence: {message: "入力してください"},
   uniqueness: {message: "同じ番号があります"}
 
+  has_many :rbs,
+           :primary_key => 'toi_no',
+           :foreign_key => 'toi_no',
+           :order => 'rb_no'
+
+
   #ルーティングでresourcesが生成するURLにおけるID以外(grp_no)によるレコード指定
   #def to_param
   #  return toi_no

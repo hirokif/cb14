@@ -10,6 +10,7 @@ class RbsController < ApplicationController
   # GET /rbs/1
   # GET /rbs/1.json
   def show
+    @rb = Rb.find(params[:id])
   end
 
   # GET /rbs/new

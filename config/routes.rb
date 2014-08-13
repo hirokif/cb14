@@ -1,9 +1,11 @@
 Cb14::Application.routes.draw do
   
-  resources :rbs
+  #resources :rbs
 
   resources :grps do
-    resources :tois
+    resources :tois do
+      resources :rbs
+    end
   end
 
   resources :corps do

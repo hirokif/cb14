@@ -1,0 +1,25 @@
+<h1><%= @toi.toi_name %></h1>
+
+<ul>
+  <% @toi.rbs.each do |rb| %>
+<li>
+  <%= rb.rb_no %>
+  <%= rb.rb_name %>
+  <%= link_to "[Edit]", edit_grp_toi_rb_path(rb.toi.grp.id, rb.toi.id, rb.id) %>
+  <%= link_to "[Delete]", grp_toi_rb_path(rb.toi.grp_no, rb.id), method: :delete,
+  		data: {confirm: "Are you sure?" } %>
+</li>	
+<% end %>
+
+<%= form_for [@grp, @grp.tois.build] do |f| %>
+<p>
+	<%= f.label :toi_no %>
+	<%= f.text_field :toi_no %><br>
+	<%= f.label :toi_name %>
+	<%= f.text_field :toi_name %><br>
+	<%= f.submit %>
+	<% end %>
+</p>
+
+</ul>
+<%= link_to "分類一覧", grps_path %>
