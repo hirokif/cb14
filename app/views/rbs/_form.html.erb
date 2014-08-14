@@ -1,29 +1,18 @@
-<%= form_for(@rb) do |f| %>
-  <% if @rb.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@rb.errors.count, "error") %> prohibited this rb from being saved:</h2>
-
-      <ul>
-      <% @rb.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
+<%= form_for [@rb.toi.grp, @rb.toi, @rb] do |f| %>
+<p>
+    <% #業種（toi）リストボックスに変更 %>
+    <%= f.collection_select :toi_no, @tois, :toi_no, :toi_name %><br>
     <%= f.label :rb_no %><br>
-    <%= f.number_field :rb_no %>
-  </div>
-  <div class="field">
+    <%= f.text_field :rb_no %><br>
     <%= f.label :rb_name %><br>
-    <%= f.text_field :rb_name %>
-  </div>
-  <div class="field">
-    <%= f.label :toi_no %><br>
-    <%= f.number_field :toi_no %>
-  </div>
-  <div class="actions">
+    <%= f.text_field :rb_name %><br>
+    <% if @rb.errors.any? %>
+    <%= @rb.errors.messages[:rb_name][0] %>
+    <% end %>
+</p>
+
+<p>
     <%= f.submit %>
-  </div>
+</p>
+
 <% end %>

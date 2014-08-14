@@ -16,6 +16,7 @@ end
 
 def show
   @toi = Toi.find(params[:id])
+  @grp = @toi.grp
 end
 
 def update
