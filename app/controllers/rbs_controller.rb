@@ -62,11 +62,9 @@ class RbsController < ApplicationController
   # DELETE /rbs/1
   # DELETE /rbs/1.json
   def destroy
+    @rb = Rb.find(params[:id])
     @rb.destroy
-    respond_to do |format|
-      format.html { redirect_to rbs_url }
-      format.json { head :no_content }
-    end
+    redirect_to grp_toi_path(params[:grp_id],params[:toi_id])
   end
 
   private
