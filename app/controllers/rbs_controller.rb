@@ -48,19 +48,15 @@ class RbsController < ApplicationController
   # PATCH/PUT /rbs/1
   # PATCH/PUT /rbs/1.json
   def update
-    respond_to do |format|
+    @rb = Rb.find(params[:id])
       if @rb.update(rb_params)
-        format.html { redirect_to @rb, notice: 'Rb was successfully updated.' }
-        format.json { head :no_content }
+      #redirect_to grp_path(@toi.grp_id)
+      redirect_to grp_toi_path(params[:grp_id],params[:toi_id])
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @rb.errors, status: :unprocessable_entity }
+        render 'edit'
       end
-    end
   end
 
-  # DELETE /rbs/1
-  # DELETE /rbs/1.json
   def destroy
     @rb = Rb.find(params[:id])
     @rb.destroy

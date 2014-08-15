@@ -20,8 +20,8 @@ class Toi < ActiveRecord::Base
 
   has_many :rbs,
            :primary_key => 'toi_no',
-           :foreign_key => 'toi_no'
-           #:order => 'rb_no'
+           :foreign_key => 'toi_no',
+           :order => 'rb_no'
 
 
   #ルーティングでresourcesが生成するURLにおけるID以外(grp_no)によるレコード指定
