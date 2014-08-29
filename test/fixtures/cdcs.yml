@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  corp_no: 1
+  toi_no: 1
+  ino: 1
+  dgl: 2014-08-29
+  amv: 1
+
+two:
+  corp_no: 1
+  toi_no: 1
+  ino: 1
+  dgl: 2014-08-29
+  amv: 1

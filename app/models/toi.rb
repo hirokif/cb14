@@ -10,10 +10,6 @@ class Toi < ActiveRecord::Base
   has_many :tois,
            :foreign_key => 'toi_no'
 
-  validates :toi_name,
-  presence: {message: "入力してください"},
-  uniqueness: {message: "同じ項目があります"}
-
   validates :toi_no,
   presence: {message: "入力してください"},
   uniqueness: {message: "同じ番号があります"}

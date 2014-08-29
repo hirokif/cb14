@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812070816) do
+ActiveRecord::Schema.define(version: 20140829030004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cdcs", force: true do |t|
+    t.integer  "corp_no"
+    t.integer  "toi_no"
+    t.integer  "ino"
+    t.date     "dgl"
+    t.integer  "amv"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cdks", force: true do |t|
     t.integer  "corp_no"

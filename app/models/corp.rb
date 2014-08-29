@@ -3,6 +3,9 @@ class Corp < ActiveRecord::Base
            :primary_key => 'corp_no',
            :foreign_key => 'corp_no'
 
+  has_many :cdcs,
+           :primary_key => 'corp_no',
+           :foreign_key => 'corp_no'
 
   validates :corp_no,
   presence: {message: "入力してください"},
