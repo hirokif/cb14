@@ -1,0 +1,22 @@
+<%= form_for [@corp, @cdc] do |f| %>
+<p>
+    業種名<br>
+        <% #業種（toi）リストボックスに変更 %>
+    <%= f.collection_select :toi_no, @tois, :toi_no, :toi_name %><br>
+    <%#= f.text_field :toi_no %><br><br>
+    <%= f.label :lno, '許可（登録）番号' %><br />
+    <%= f.text_field :lno %><br><br>
+    <%= f.label :dgl, '許可年月日' %><br />
+    <%= f.text_field :dgl %><br><br>
+    <%= f.label :amv, '平均実績高（千円）' %><br />
+    <%= f.text_field :amv %><br><br>
+    <% if @cdc.errors.any? %>
+    <%= @cdc.errors.messages[:pp][0] %>
+    <% end %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+
+<% end %>

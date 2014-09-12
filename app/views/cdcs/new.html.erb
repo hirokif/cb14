@@ -1,0 +1,9 @@
+<h1><%= @corp.corp_name %></h1>
+<% case params[:grp_no] when '1' %>
+  <%= @grp.grp_name %>の業種を追加
+<% when '2' %>
+  <%= @grp.grp_name %>の業種を追加
+<% when '3' %>
+  <%= @grp.grp_name %>の業種を追加
+<% end %>
+<%= render 'form' %>
