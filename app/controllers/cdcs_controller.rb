@@ -12,7 +12,7 @@ class CdcsController < ApplicationController
     redirect_to corp_path(@corp.corp_no)
   end
 
- def edit
+  def edit
     @cdc = Cdc.find(params[:id])
     @corp = Corp.find(params[:corp_id])
     @tois = Toi.all
