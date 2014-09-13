@@ -5,4 +5,17 @@ class CdcsController < ApplicationController
     @tois = Toi.find_all_by_grp_no(params[:grp_no])
     @grp = Grp.find(params[:grp_no])
   end
+
+  def create
+    @corp = Corp.find(params[:corp_id])
+    @cdc = @corp.cdcs.create(cdc_params)
+    redirect_to corp_path(@corp.corp_no)
+  end
+
+
+   private
+    def cdc_params
+      params.require(:cdc).permit(:toi_no, :lno, :dgl, :amv)
+    end
+
 end
