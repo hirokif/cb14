@@ -18,6 +18,15 @@ class CdcsController < ApplicationController
     @tois = Toi.all
   end
 
+  def update
+    @cdc = Cdc.find(params[:id])
+    if @cdc.update(cdc_params)
+      redirect_to corp_path(@cdc.corp_no)
+    else
+      render 'edit'
+    end
+  end
+
    private
     def cdc_params
       params.require(:cdc).permit(:toi_no, :lno, :dgl, :amv)
