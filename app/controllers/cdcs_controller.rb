@@ -27,6 +27,12 @@ class CdcsController < ApplicationController
     end
   end
 
+  def destroy
+    @cdc = Cdc.find(params[:id])
+    @cdc.destroy
+    redirect_to corp_path(@cdc.corp_no)
+  end
+
    private
     def cdc_params
       params.require(:cdc).permit(:toi_no, :lno, :dgl, :amv)
