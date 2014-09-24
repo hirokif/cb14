@@ -74,18 +74,18 @@
         </tr>
     </table>
 </br>
-<p>建設工事 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no, :grp_no => 1) %></p>
+建設工事 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no, :grp_no => 1) %>
 <% if @corp.cdks.select{|a| a.toi_no<200 && a.toi_no>100}.any? %>
 <table>
   <thead>
     <tr>
-      <td>業種名</td>
-      <td>P点（総合評定値）</td>
-      <td>平均完成工事高（千円）</td>
-      <td>１級</td>
-      <td>基幹</td>
-      <td>２級</td>
-      <td>その他</td>
+      <th>業種名</th>
+      <th>P点（総合評定値）</th>
+      <th>平均完成工事高（千円）</th>
+      <th>１級</th>
+      <th>基幹</th>
+      <th>２級</th>
+      <th>その他</th>
     </tr>
   </thead>
   <tbody>
@@ -108,16 +108,16 @@
   </tbody>
 </table>
 <% end %>
-
-<p>測量・建設コンサル | <%= link_to "追加", new_corp_cdc_path(@corp.corp_no, :grp_no => 2) %></p>
+</br>
+測量・建設コンサル | <%= link_to "追加", new_corp_cdc_path(@corp.corp_no, :grp_no => 2) %>
 <% if @corp.cdcs.select{|a| a.toi_no<300 && a.toi_no>200}.any? %>
 <table>
   <thead>
     <tr>
-      <td>業種名</td>
-      <td>許可（登録）番号</td>
-      <td>許可年月日</td>
-      <td>平均実績高（千円）</td>
+      <th>業種名</th>
+      <th>許可（登録）番号</th>
+      <th>許可年月日</th>
+      <th>平均実績高（千円）</th>
     </tr>
   </thead>
   <tbody>
@@ -137,9 +137,9 @@
   </tbody>
 </table>
 <% end %>
+</br>
 
-
-<p>物品製造 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no, :grp_no => 3) %></p>
+物品製造 | <%= link_to "追加", new_corp_cdk_path(@corp.corp_no, :grp_no => 3) %>
 
 
 <%= link_to "建設工事",corp_cdks_path(@corp.corp_no) %>
