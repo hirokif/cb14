@@ -7,6 +7,12 @@ class Corp < ActiveRecord::Base
            :primary_key => 'corp_no',
            :foreign_key => 'corp_no'
 
+  has_many :crbs,
+           :primary_key => 'corp_no',
+           :foreign_key => 'corp_no'
+
+  has_many :rbs, through: :crbs
+
   validates :corp_no,
   presence: {message: "入力してください"},
   uniqueness: {message: "同じ項目があります"}

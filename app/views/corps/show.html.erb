@@ -123,7 +123,20 @@
   <tbody>
     <% @corp.cdcs.order(:toi_no).each do |cdc| %>
     <tr>
-      <td><%= cdc.toi.toi_name %></td>
+      <td><%= cdc.toi.toi_name %><br>
+        <%# Crb show detail %>
+        <%# crb = Crb.where(rb_no:Rb.where(toi_no:cdc.toi_no)) %>
+        <%# crb.where(corp_no:cdc.corp_no).each do |crbn| %>
+        <ul>
+          <% @corp.rbs.where(toi_no:cdc.toi_no).each do |rb| %>
+            <li><%= rb.rb_name %><br></li>
+          <% end %>
+        </ul>
+
+        <%# Crb.where(corp_no:cdc.corp_no).each do |crbn| %>
+          <%#= crbn.rb.rb_name %><br>
+        <%# end %>
+      </td>
       <td><%= cdc.lno %></td>
       <td><%= cdc.dgl %></td>
       <td><%= cdc.amv %></td>

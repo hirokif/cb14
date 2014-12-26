@@ -6,6 +6,12 @@ class Rb < ActiveRecord::Base
   :primary_key => 'toi_no',
   :foreign_key => 'toi_no'
 
+  has_many :crbs,
+           :primary_key => 'rb_no',
+           :foreign_key => 'rb_no'
+
+  has_many :corps, through: :crbs 
+
   #has_many :rbs,
   #         :foreign_key => 'tb_no'
 end
