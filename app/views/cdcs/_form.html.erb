@@ -14,7 +14,11 @@
     <%= @cdc.errors.messages[:pp][0] %>
     <% end %>
 </p>
-
+  <%= field_set_tag '事業名' do %>
+    <%= f.fields_for :crbs do |crb| %>
+      <%= crb.collection_select :rb_no, @rbs, :rb_no, :rb_name %><br>
+    <% end %>
+  <% end %>
 <p>
     <%= f.submit %>
 </p>

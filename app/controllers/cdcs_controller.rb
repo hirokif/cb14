@@ -16,6 +16,7 @@ class CdcsController < ApplicationController
     @cdc = Cdc.find(params[:id])
     @corp = Corp.find(params[:corp_id])
     @tois = Toi.all
+    @rbs = Rb.all
   end
 
   def update
